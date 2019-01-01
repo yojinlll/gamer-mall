@@ -1,0 +1,48 @@
+.member-wrapper {
+  min-height: 100vh;
+  background: rgba(64, 76, 100, 0.22);
+
+  .header-logo {
+    border: 1px solid black;
+    line-height: 50px;
+    text-align: center;
+    background: orangered;
+  }
+
+  .member-main {
+    border: 1px solid black;
+
+    .member-info{
+      height: 120px;
+      display: flex;
+      align-items: center;
+      background: #ff7181;
+
+
+      .info-img{
+        width: 70px; height: 70px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 30px;
+        background: #b8a0ff;
+      }
+    }
+
+    .member-nav {
+      line-height: 50px;
+      display: flex;
+      //justify-content: space-around;
+
+      div {
+        border: 1px solid black;
+        flex: 1;
+        text-align: center;
+        background: #9ad0ff;
+
+      }
+      .active{
+        background: #ff8250;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人中心</title>
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" v-cloak>
+    <div class="member-wrapper">
+      <a href="index.html">
+        <header class="header-logo">Gamer</header>
+      </a>
+      <div class="member-main">
+        <div class="member-info">
+          <div class="info-img"></div>
+        </div>
+        <div class="member-nav">
+          <div v-for="(item,index) in navLists"
+               @click="selectRoute(item)"
+          >
+            {{item}}
+          </div>
+        </div>
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

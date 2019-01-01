@@ -1,0 +1,103 @@
+.goods-wrapper{
+  border: 1px solid black;
+  margin: 50px 0;
+
+  .goods-main{
+    width: 100vw;
+
+    .goods-img{
+      height: 300px;
+      display: flex;
+
+      .img-lists{
+        flex: 1;
+        border: 1px solid black;
+
+          div{
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+
+            img{
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          .active{
+            border: 1px solid orangered;
+          }
+      }
+      .img-center{
+        flex: 4;
+        border: 1px solid black;
+        position: relative;
+
+        img{
+          width: 80%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .goods-msg{
+      border: 1px solid black;
+      padding: 10px 0;
+      text-align: center;
+
+      &[price]{
+        color: red;
+      }
+    }
+
+    .goods-count{
+      display: flex;
+      font-size: 30px;
+
+      .goods-minus,.goods-plus{
+        border: 1px solid black;
+        background: salmon;
+        line-height: 50px;
+        flex: 1;
+        text-align: center;
+        user-select: none;
+      }
+      .goods-number{
+        border: 1px solid black;
+        text-align: center;
+      }
+    }
+    .goods-button{
+      height: 50px;
+      background: #adadad;
+      text-align: center;
+      line-height: 50px;
+      transition: all .5s;
+    }
+    .buttonActive{
+      transition: all .5s;
+      background: orangered;
+    }
+  }
+
+  .cart-icon{
+    border: 1px solid red;
+    height: 50px;
+    width: 70px;
+    position: absolute;
+    right: 0;
+    bottom: 30px;
+    text-align: center;
+    line-height: 50px;
+    background: orangered;
+    transform: translateX(101%);
+    transition: all .5s;
+  }
+  .iconActive{
+    transition: all .5s;
+    transform: translateX(0);
+  }
+}
