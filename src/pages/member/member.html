@@ -23,8 +23,9 @@
           <div class="info-img"></div>
         </div>
         <div class="member-nav">
-          <div v-for="(item,index) in navLists"
-               @click="selectRoute(item)"
+          <div v-for="(item,route) in navLists"
+               @click="selectRoute(route)"
+               :class="{active: activeRoute === route}"
           >
             {{item}}
           </div>

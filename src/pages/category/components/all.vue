@@ -9,11 +9,6 @@
 
   export default {
     name: 'allBook',
-    data(){
-      return {
-        lock: false
-      }
-    },
     computed: {
       lists(){
         return this.$store.state.allLists

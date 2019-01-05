@@ -16,10 +16,12 @@ new Vue({
   store,
   data: {
     navLists,
+    activeRoute: 'cart'
   },
   methods: {
-    selectRoute(index){
-      console.log(index)
+    selectRoute(route){
+      this.activeRoute = route
+      this.$router.push(route)
     }
   }
 })
