@@ -1,26 +1,22 @@
+
 <template>
   <nav class="g-nav">
-    <div class="g-icon" @click="selected()">
-      Gamer
+    <g-button @click="selectRoute()">首页</g-button>
+
+    <div>
+      <g-button @click.stop="activeMenu">{{string}}</g-button>
+      <ul class="menu-list" v-show="show">
+        <li v-for="(item,index) in navConfig"
+            @click="selectRoute(item.href,index)"
+        >{{item.name}}</li>
+      </ul>
     </div>
-    <ul class="g-nav-link">
-      <li>
-        <div class="g-nav-button" :class="{show: show}" @click.stop="onShow">
-          <div @click="goCart">{{string}}</div>
-          <ul class="g-nav-button-list">
-            <li @click="selected(item.href,index)"
-                v-for="(item,index) in navConfig"
-            >
-              {{item.name}}
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
   </nav>
 </template>
 
 <script>
+  import {Button} from 'mint-ui'
+
   let navConfig = [
     {
       name: '全 部',
@@ -51,18 +47,19 @@
       }
     },
     methods: {
-      onShow(){
-        if (location.href.match('category')) return
-        this.show = ! this.show
-      },
-      selected(href, index){
+      selectRoute(href, index){
         href ? location.href = `${href}?index=${index}` : location.href = 'index.html'
       },
-      goCart(){
-        if (this.string === '购物车') {
+      activeMenu(){
+        if(this.string === '分类'){
+          this.show = ! this.show
+        }else{
           location.href = 'member.html'
         }
       }
+    },
+    components: {
+      'g-button': Button
     }
   }
 </script>
@@ -70,42 +67,29 @@
 <style lang="less" scoped>
   .g-nav {
     display: flex;
-    /*background: rgb(26, 24, 38);*/
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255, 131, 107);
+    height: 70px;
+    padding: 0 10px;
+    position: relative;
 
-    .g-icon {
-      flex: 1;
-      line-height: 50px;
-      text-align: center;
-      background: orangered;
-    }
-    .g-nav-link {
-      flex: 3;
-      display: flex;
-      justify-content: flex-end;
-      z-index: 1;
+    .menu-list{
+      position: absolute;
+      top: 90%;
+      right: 8px;
+      width: 100px;
+      border-radius: 5px;
+      background: #f6f8fa;
+      color: #656b79;
+      font-size: 20px;
+      z-index: 100;
 
-      li {
-        background: orangered;
-        line-height: 50px;
-        width: 60px;
+      li{
         text-align: center;
-
-        .g-nav-button {
-
-          .g-nav-button-list {
-            position: absolute;
-            display: none;
-
-            li{
-              border: 1px solid black;
-            }
-          }
-        }
-        .show {
-          .g-nav-button-list {
-            display: block;
-          }
-        }
+        margin: 10px;
+        padding: 5px;
+        border-bottom: 2px solid #a0a9b9;
       }
     }
   }

@@ -8,5 +8,10 @@ new Vue({
   el: '#app',
   components: {
     'g-nav': gNav
+  },
+  methods: {
+    close(){
+      this.$children[0].show = false
+    }
   }
 })
