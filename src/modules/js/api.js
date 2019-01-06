@@ -6,7 +6,8 @@ let url = {
   address: '/member/address'
 }
 
-let host = 'http://rap2api.taobao.org/app/mock/119045'
+// let host = 'http://rap2api.taobao.org/app/mock/119045'
+let host = '//rap2api.taobao.org/app/mock/119045'
 
 for(let key in url){
   if(url.hasOwnProperty(key)){
