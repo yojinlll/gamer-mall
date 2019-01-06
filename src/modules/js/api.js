@@ -7,7 +7,7 @@ let url = {
 }
 
 // let host = 'http://rap2api.taobao.org/app/mock/119045'
-let host = '//rap2api.taobao.org/app/mock/119045'
+let host = ' https://www.easy-mock.com/mock/5c31c45467fe190a45936a5e/gamer'
 
 for(let key in url){
   if(url.hasOwnProperty(key)){
