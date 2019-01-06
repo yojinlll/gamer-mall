@@ -15,13 +15,15 @@
 <body>
   <div id="app" v-cloak>
     <div class="member-wrapper">
-      <a href="index.html">
-        <header class="header-logo">Gamer</header>
-      </a>
+
+      <g-nav></g-nav>
+
       <div class="member-main">
+
         <div class="member-info">
           <div class="info-img"></div>
         </div>
+
         <div class="member-nav">
           <div v-for="(item,route) in navLists"
                @click="selectRoute(route)"
@@ -30,7 +32,9 @@
             {{item}}
           </div>
         </div>
+
         <router-view></router-view>
+
       </div>
     </div>
   </div>

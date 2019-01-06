@@ -25,8 +25,7 @@
 
 <style lang="less" scoped>
   .g-all-wrapper {
-    /*border: 1px solid black;*/
-    padding: 0.1px;
+    /*padding: 0.1px;*/
   }
 
 

@@ -1,10 +1,15 @@
 
 <template>
   <nav class="g-nav">
-    <g-button @click="selectRoute()">首页</g-button>
+    <g-button class="g-mint-button" @click="selectRoute()">首页</g-button>
+
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-gamer"></use>
+    </svg>
 
     <div>
-      <g-button @click.stop="activeMenu">{{string}}</g-button>
+      <g-button class="g-mint-button" @click.stop="activeMenu">{{string}}</g-button>
+
       <ul class="menu-list" v-show="show">
         <li v-for="(item,index) in navConfig"
             @click="selectRoute(item.href,index)"
@@ -16,6 +21,7 @@
 
 <script>
   import {Button} from 'mint-ui'
+  import '@/modules/assets/svg.js'
 
   let navConfig = [
     {
@@ -27,7 +33,7 @@
       href: 'category.html'
     },
     {
-      name: '轻薄本',
+      name: '超极本',
       href: 'category.html'
     },
   ]
@@ -89,8 +95,16 @@
         text-align: center;
         margin: 10px;
         padding: 5px;
-        border-bottom: 2px solid #a0a9b9;
+        border-bottom: 2px solid #d3ddee;
+
+        &:last-child{
+          margin-bottom: 20px;
+        }
       }
+    }
+
+    .g-mint-button{
+      width: 80px;
     }
   }
 </style>

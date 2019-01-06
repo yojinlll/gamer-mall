@@ -5,6 +5,7 @@ import Vue from 'vue'
 import router from './router/index.js'
 import store from '../../stores/vuex/index.js'
 import gNavigation from '@/components/g-nav.vue'
+import Velocity from 'velocity-animate'
 
 import fetch from '@/modules/js/fetch.js'
 import url from '@/modules/js/api.js'
@@ -22,16 +23,18 @@ new Vue({
     selectList,
     interval,
 
+    topIcon: false,
     show: false,
     selectIndex: 0,
   },
   computed: {
     priceIndex(){
       return this.$store.state.priceIndex
-    }
+    },
   },
   created(){
     this.initRoute()
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     select(index){      // 选择分类
@@ -58,6 +61,13 @@ new Vue({
       }else if (location.href.match('index=2')) {
         this.select(2)
       }
+    },
+    handleScroll(){
+      document.documentElement.scrollTop > 100 ? this.topIcon = true : this.topIcon = false
+    },
+    goTop(){
+      // document.documentElement.scrollTop = 0
+      Velocity(document.body,'scroll',{duration: 500})
     }
   },
   components: {

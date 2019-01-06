@@ -52,7 +52,6 @@
 
 <style lang="less" scoped>
   .g-game-wrapper {
-    border: 1px solid red;
 
     .goods-lists {
 

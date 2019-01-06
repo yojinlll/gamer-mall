@@ -1,6 +1,11 @@
 <template>
   <div class="address-wrapper">
     <ul class="address-lists">
+
+      <div class="g-loading" v-show="!lists">
+        <g-loading :type="3" :size="100" color="#f5c437"></g-loading>
+      </div>
+
       <li class="address-item" v-for="item in lists"
           @click="selectAddress(item)"
           :class="{select: item.select === true}"
@@ -58,6 +63,8 @@
 </template>
 
 <script>
+  import mixin from '@/modules/js/mixin.js'
+
   export default {
     name: "gAddress",
     data(){
@@ -108,7 +115,7 @@
               this.$store.commit('setDefaultAddress', data.id)
             }
           }else {
-            console.log('填空啊，白痴')
+            console.log('未输入有效地址')
           }
         }else {
           let data = {name, phone, address, show, id}
@@ -149,16 +156,19 @@
           this.$store.commit('setDefaultAddress', this.lists[0].id)
         }
       }
-    }
+    },
+    mixins: [mixin]
   }
 </script>
 
 <style lang="less" scoped>
 
   .address-wrapper {
-    background: #ff8250;
-    min-height: 600px;
+    background: #FF836B;
+    min-height: 450px;
     padding: 0.1px;
+    margin: 0 10px;
+    border-radius: 5px;
 
     .address-lists {
       margin: 30px 0 80px;
@@ -205,8 +215,7 @@
       padding: 10px;
       text-align: center;
       border-radius: 5px;
-      border: 1px solid black;
-      background: #ff463c;
+      background: #ffa144;
       position: fixed;
       bottom: 20px; left: 50%;
       transform: translateX(-50%);

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang=zh-Hans>
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <meta http-equiv=X-UA-Compatible content="ie=edge">
+  <title>商品详情</title>
+  <style>[v-cloak] {
+    display: none;
+  }</style>
+  <link href=./static/css/goods.002440328c6b0358f994c19babbec4f3.css rel=stylesheet>
+</head>
+<body>
+<div id=app v-cloak>
+  <g-nav></g-nav>
+  <div class=goods-wrapper>
+    <div class=g-loading v-show=!goods>
+      <g-loading :type=3 :size=100 color=#f5c437></g-loading>
+    </div>
+    <div class=goods-main v-if=goods>
+      <div class=goods-img>
+        <div class=img-lists>
+          <div v-for="(item,index) in goods.img" :class="{active: activeImg === index}" @click=selectImg(index)><img
+            :src=item alt=""></div>
+        </div>
+        <div class=img-center><img :src=goods.img[activeImg] alt=""></div>
+      </div>
+      <div class=goods-msg name>{{goods.name}}</div>
+      <div class=goods-msg info>{{goods.info}}</div>
+      <div class=goods-msg price>￥{{goods.price}}</div>
+      <div class=goods-count>
+        <div class=goods-minus @click=reduce>-</div>
+        <input class=goods-number type=text v-model=goodsNumber>
+        <div class=goods-plus @click=add>+</div>
+      </div>
+      <div class=goods-button :class="{buttonActive: goodsNumber >= 1}" @click=addCart>加入购物车</div>
+    </div>
+    <div class=cart-icon :class={iconActive} @click=goCart>购物车</div>
+  </div>
+</div>
+<script type=text/javascript src=./static/js/manifest.fa75d42566179fe51f57.js></script>
+<script type=text/javascript src=./static/js/vendor.1dd0c8c432a70047fc8d.js></script>
+<script type=text/javascript src=./static/js/goods.6f84d64c014ac649b160.js></script>
+</body>
+</html>

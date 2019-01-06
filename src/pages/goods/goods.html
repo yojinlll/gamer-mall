@@ -15,7 +15,13 @@
 <body>
   <div id="app" v-cloak>
     <g-nav></g-nav>
+
     <div class="goods-wrapper">
+
+      <div class="g-loading" v-show="!goods">
+        <g-loading :type="3" :size="100" color="#f5c437"></g-loading>
+      </div>
+
       <div class="goods-main" v-if="goods">
         <div class="goods-img">
           <div class="img-lists">
@@ -27,8 +33,8 @@
             <img :src="goods.img[activeImg]" alt="">
           </div>
         </div>
-        <div class="goods-msg">{{goods.name}}</div>
-        <div class="goods-msg">{{goods.info}}</div>
+        <div class="goods-msg" name>{{goods.name}}</div>
+        <div class="goods-msg" info>{{goods.info}}</div>
         <div class="goods-msg" price>￥{{goods.price}}</div>
 
         <div class="goods-count">

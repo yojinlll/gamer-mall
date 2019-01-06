@@ -13,3 +13,18 @@ li {list-style: none}
 a {text-decoration: none; color: black;}
 
 input {border: none; outline: none;}
+
+.icon {
+  width: 4em; height: 4em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  color: #6b5252;
+}
+
+.g-loading{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}

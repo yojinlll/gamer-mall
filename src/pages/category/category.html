@@ -18,6 +18,7 @@
       <g-nav></g-nav>
 
       <div class="search-wrapper">
+
         <ul class="search-list-1">
           <li class="search-list-item"
               :class="{active: selectIndex===index}"
@@ -28,8 +29,10 @@
           </li>
         </ul>
 
+
+
         <ul class="search-list-2"
-            :class="{show}"
+            v-show="show"
         >
           <li class="search-list-item"
               :class="{active: priceIndex===index}"
@@ -39,8 +42,12 @@
             {{item}}
           </li>
         </ul>
+
+
       </div>
       <router-view></router-view>
+
+      <div class="go-top-icon" v-show="topIcon" @click="goTop">TOP</div>
     </div>
   </div>
 </body>

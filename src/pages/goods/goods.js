@@ -10,7 +10,8 @@ import url from '@/modules/js/api.js'
 Vue.prototype.$fetch = fetch
 Vue.prototype.url = url
 
-import gNav from '@/components/g-nav.vue'
+import mixin from '@/modules/js/mixin.js'
+
 
 new Vue({
   el: '#app',
@@ -60,8 +61,10 @@ new Vue({
       this.goodsNumber --
     },
     addCart(){
-      this.iconActive = true
-      this.goodsNumber = 0
+      if(this.goodsNumber){
+        this.iconActive = true
+        this.goodsNumber = 0
+      }
     },
     goCart(){
       location.href = 'member.html'
@@ -73,7 +76,5 @@ new Vue({
       obj.img = obj.img.split(',')
     }
   },
-  components: {
-    'g-nav': gNav
-  }
+  mixins: [mixin]
 })

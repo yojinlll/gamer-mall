@@ -1,6 +1,11 @@
 <template>
   <div class="member-cart">
     <ul class="cart-goods-lists">
+
+      <div class="g-loading" v-show="!lists">
+        <g-loading :type="3" :size="100" color="#f5c437"></g-loading>
+      </div>
+
       <li class="cart-goods"
           v-for="item in lists"
           @click="selectGoods(item)"
@@ -8,7 +13,7 @@
       >
         <div class="point"></div>
         <div class="goods-msg">
-          <img :src="item.img" alt="">
+          <img :src="item.img" alt="" @click="goodsPage(item.id)">
           <div msg>
             <div name>{{item.goods}}</div>
             <div data>
@@ -25,7 +30,7 @@
     </ul>
     <div class="cart-footer" :class="{select: allSelected === true}">
       <div class="all-button"
-        @click="selectAll">
+           @click="selectAll">
         <div class="point"></div>
         <span>全选</span>
       </div>
@@ -38,6 +43,8 @@
 </template>
 
 <script>
+  import mixin from '@/modules/js/mixin.js'
+
   export default {
     name: "gCart",
     data(){
@@ -69,7 +76,7 @@
         let total = 0
         if (this.lists && this.lists.length) {
           this.lists.forEach(item => {
-            if(item.select){
+            if (item.select) {
               // array.push(item)
               total += item.price * item.number
             }
@@ -103,17 +110,23 @@
       },
       selectAll(){
         this.allSelected = ! this.allSelected
+      },
+      goodsPage(id){
+        location.href = `goods.html?id=${id}`
       }
-    }
+    },
+    mixins: [mixin]
   }
 </script>
 
 <style lang="less" scoped>
 
   .member-cart {
-    background: #ff8250;
-    min-height: 600px;
+    background: #FF836B;
+    min-height: 450px;
     padding: 0.1px;
+    margin: 0 10px;
+    border-radius: 5px;
 
     .point {
       width: 20px; height: 20px;
@@ -206,21 +219,21 @@
       display: flex;
       align-items: center;
 
-      .all-button{
+      .all-button {
         display: flex;
         align-items: center;
         padding: 10px;
       }
-      .cart-count{
+      .cart-count {
         flex: 1;
         display: flex;
         justify-content: flex-end;
         align-items: center;
 
-        span{
+        span {
           color: red;
         }
-        div{
+        div {
           margin: 0 10px;
           padding: 10px;
           border-radius: 5px;

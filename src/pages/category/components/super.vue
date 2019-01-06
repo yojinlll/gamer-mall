@@ -54,7 +54,6 @@
 
 <style lang="less" scoped>
   .g-super-wrapper {
-    border: 1px solid green;
 
     .goods-lists {
 
