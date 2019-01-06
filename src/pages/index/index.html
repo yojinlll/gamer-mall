@@ -16,9 +16,19 @@
 <div id="app" v-cloak @click="close">
   <div class="g-wrapper">
     <g-nav></g-nav>
-    <section class="g-banner"></section>
-    <div class="g-option">顶级游戏本</div>
-    <div class="g-option">超级轻薄本</div>
+    <section class="g-banner">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide" one></div>
+          <div class="swiper-slide" two></div>
+          <div class="swiper-slide" three></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <div class="g-option" @click="handleHref(href.game[1])" game>{{href.game[0]}}</div>
+    <div class="g-option" @click="handleHref(href.super[1])" super>{{href.super[0]}}</div>
   </div>
 </div>
 

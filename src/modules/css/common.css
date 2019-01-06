@@ -28,3 +28,7 @@ input {border: none; outline: none;}
   left: 50%;
   transform: translateX(-50%);
 }
+
+html,body{
+  overflow-x:hidden;
+}

@@ -33,7 +33,7 @@
       href: 'category.html'
     },
     {
-      name: '超极本',
+      name: '轻薄本',
       href: 'category.html'
     },
   ]
@@ -88,7 +88,7 @@
       border-radius: 5px;
       background: #f6f8fa;
       color: #656b79;
-      font-size: 20px;
+      font-size: 18px;
       z-index: 100;
 
       li{

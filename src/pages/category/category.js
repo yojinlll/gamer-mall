@@ -12,7 +12,7 @@ import url from '@/modules/js/api.js'
 Vue.prototype.$fetch = fetch
 Vue.prototype.url = url
 
-let selectList = ['全 部', '游戏本', '超极本']
+let selectList = ['全 部', '游戏本', '轻薄本']
 let interval = ['全 部', '10000 元以上', '10000 元以下']
 
 new Vue({
@@ -58,8 +58,11 @@ new Vue({
     initRoute(){      // 根据路径参数来初始页面的分类选择
       if (location.href.match('index=1')) {
         this.select(1)
+        if(location.href.match('up')) this.$store.commit('changeIndex', 1)
+
       }else if (location.href.match('index=2')) {
         this.select(2)
+        if(location.href.match('up')) this.$store.commit('changeIndex', 1)
       }
     },
     handleScroll(){

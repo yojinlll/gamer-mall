@@ -6,15 +6,47 @@
 
 .g-banner{
   margin: 50px 0;
-  border: 1px solid black;
   height: 300px;
+  background: #a6a698;
+
+  img{
+    height: 300px;
+    width: 100%;
+  }
+
+  .swiper-slide{
+    height: 300px;
+
+    &[one]{
+      background: url("https://s.aolcdn.com/hss/storage/midas/1bf79b0f531b7ddefaa9643082b3a19d/206394345/razer-blade-press-6-1.jpg") no-repeat 50%;
+      background-size: cover;
+    }
+    &[two]{
+      background: url("https://i0.wp.com/cdn.mos.cms.futurecdn.net/uTof96ipmuSN9PVhbccX7m.jpg") no-repeat 50%;
+      background-size: cover;
+    }
+    &[three]{
+      background: url("https://pbs.twimg.com/media/DaOUvkcXUAIQc48.jpg") no-repeat 50%;
+      background-size: cover;
+    }
+  }
 }
 
 .g-option{
   margin: 10px 0;
-  border: 1px solid black;
   height: 100px;
-  text-align: center;
   line-height: 100px;
+  font-size: 20px;
+
+  &[game]{
+    text-align: start;
+    padding-left: 100px;
+    background: #ff5484;
+  }
+  &[super]{
+    padding-right: 100px;
+    text-align: end;
+    background: #9bd07d;
+  }
 }
 

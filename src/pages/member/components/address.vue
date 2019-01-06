@@ -206,7 +206,7 @@
           margin: 5px;
           padding: 5px;
           border-radius: 5px;
-          background: #ff0000c2;
+          background: rgba(240, 3, 0, 0.76);
         }
       }
     }

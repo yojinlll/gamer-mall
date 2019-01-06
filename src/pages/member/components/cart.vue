@@ -36,7 +36,7 @@
       </div>
       <div class="cart-count">
         <span>合计 : {{goodsCount}}</span>
-        <div>结算</div>
+        <div class="count-button">结算</div>
       </div>
     </div>
   </div>
@@ -123,7 +123,7 @@
 
   .member-cart {
     background: #FF836B;
-    min-height: 450px;
+    min-height: 550px;
     padding: 0.1px;
     margin: 0 10px;
     border-radius: 5px;
@@ -233,7 +233,7 @@
         span {
           color: red;
         }
-        div {
+        .count-button {
           margin: 0 10px;
           padding: 10px;
           border-radius: 5px;
