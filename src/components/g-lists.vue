@@ -16,6 +16,8 @@
 
       <div>查看详情</div>
     </li>
+
+    <div class="lists-tips" v-show="lists">END</div>
   </ul>
 </template>
 
@@ -88,8 +90,11 @@
           width: 200px;
         }
       }
-
     }
 
+    .lists-tips{
+      text-align: center;
+      color: #303030;
+    }
   }
 </style>

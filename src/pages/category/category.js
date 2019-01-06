@@ -9,6 +9,7 @@ import Velocity from 'velocity-animate'
 
 import fetch from '@/modules/js/fetch.js'
 import url from '@/modules/js/api.js'
+
 Vue.prototype.$fetch = fetch
 Vue.prototype.url = url
 
@@ -34,7 +35,7 @@ new Vue({
   },
   created(){
     this.initRoute()
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     select(index){      // 选择分类
@@ -58,11 +59,11 @@ new Vue({
     initRoute(){      // 根据路径参数来初始页面的分类选择
       if (location.href.match('index=1')) {
         this.select(1)
-        if(location.href.match('up')) this.$store.commit('changeIndex', 1)
-
       }else if (location.href.match('index=2')) {
         this.select(2)
-        if(location.href.match('up')) this.$store.commit('changeIndex', 1)
+      }
+      if (location.href.match('price=up')) {
+        this.$store.commit('changeIndex', 1)
       }
     },
     handleScroll(){
@@ -70,7 +71,7 @@ new Vue({
     },
     goTop(){
       // document.documentElement.scrollTop = 0
-      Velocity(document.body,'scroll',{duration: 500})
+      Velocity(document.body, 'scroll', {duration: 500})
     }
   },
   components: {

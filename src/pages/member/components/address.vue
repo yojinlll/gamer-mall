@@ -32,8 +32,8 @@
     </ul>
     <div class="newAddress-button" @click="editAddress">添加地址</div>
 
-    <div class="change-popover" v-show="edit">
-      <div class="address-form">
+    <div class="change-popover" v-show="edit" @click="hidePopover()">
+      <div class="address-form" @click.stop>
         <div class="form-row">
           <label>收货人：</label>
           <input type="text" placeholder="请输入姓名" name="user_name" v-model="name">
@@ -148,6 +148,9 @@
         this.id = ''
         this.defaultMark = false
         this.showButton = true
+      },
+      hidePopover(){
+        this.edit = false
       }
     },
     watch: {
@@ -262,7 +265,7 @@
           }
 
           label { color: red; }
-          input { width: 300px; }
+          input { width: 300px; font-size: 18px}
         }
       }
 

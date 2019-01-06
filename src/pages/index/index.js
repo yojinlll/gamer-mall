@@ -12,8 +12,8 @@ new Vue({
   el: '#app',
   data: {
     href:{
-      game: ['顶级游戏本', 'category.html?index=1&up'],
-      super: ['超级轻薄本', 'category.html?index=2&up']
+      game: ['顶级游戏本', 'category.html?index=1&price=up'],
+      super: ['超级轻薄本', 'category.html?index=2&price=up']
     }
 
   },
