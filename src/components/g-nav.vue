@@ -90,6 +90,7 @@
       color: #656b79;
       font-size: 18px;
       z-index: 100;
+      user-select: none;
 
       li{
         text-align: center;

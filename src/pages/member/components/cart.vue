@@ -196,6 +196,7 @@
                   height: 30px;
                   color: #2a2a2a;
                   background: rgb(242, 242, 242);
+                  user-select: none;
                 }
                 input {
                   margin-left: 10px;
