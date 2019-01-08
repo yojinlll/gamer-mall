@@ -14,15 +14,16 @@
         active: true,
         upLists: [],
         downLists: [],
+        lists: null,
       }
     },
     computed: {
       priceIndex(){
         return this.$store.state.priceIndex
       },
-      lists(){
-        return this.$store.state.gameLists
-      },
+      // lists(){
+      //   return this.$store.state.gameLists
+      // },
       rankLists(){
         if(this.lists){
           if(this.active){
@@ -43,7 +44,10 @@
     },
     created(){
       if(!this.lists){
-        this.$store.dispatch('getGameLists')
+        // this.$store.dispatch('getGameLists')
+        this.$fetch(this.url.game).then(res => {
+          this.lists = res.data.lists
+        })
       }
     },
     mixins: [mixin]

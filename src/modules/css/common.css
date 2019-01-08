@@ -29,6 +29,6 @@ input {border: none; outline: none;}
   transform: translateX(-50%);
 }
 
-html,body{
+body{
   overflow-x:hidden;
 }

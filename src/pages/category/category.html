@@ -45,7 +45,9 @@
 
 
       </div>
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
 
       <div class="go-top-icon" v-show="topIcon" @click="goTop">TOP</div>
     </div>

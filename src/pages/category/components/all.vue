@@ -9,14 +9,22 @@
 
   export default {
     name: 'allBook',
-    computed: {
-      lists(){
-        return this.$store.state.allLists
+    data(){
+      return {
+        lists: null
       }
+    },
+    computed: {
+      // lists(){
+      //   return this.$store.state.allLists
+      // }
     },
     created(){
       if(!this.lists){
-          this.$store.dispatch('getAllLists')
+          // this.$store.dispatch('getAllLists')
+        this.$fetch(this.url.all).then(res => {
+          this.lists = res.data.lists
+        })
       }
     },
     mixins: [mixin]
